@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
 
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="/styles/style.css">
   <title>TimeMate | Digital Color</title>
 </head>
@@ -36,24 +38,32 @@
       </div>
       <div class="container t-center m-bottom">
         <p>Do you want to update your meal preferences?</p>
-        <button id="setPreference">Click here!</button>
-        <form action="">
+        <button id="setPreference">Update Preferences!</button>
+        <form action="" class="flex col ali-center j-center">
           <fieldset>
             <legend>breakfast</legend>
-            <input type="text" placeholder="what would you take for breakfast">
+            <label for="breakfastMeal">breakfast meal</label>
+            <input type="text" name="breakfastMeal" placeholder="what would you take for breakfast">
+            <label for="breakfast-time">Breakfast Time</label>
             <input type="datetime" name="breakfast-time" id="breakfast-time" placeholder="select time for breakfast">
           </fieldset>
           <fieldset>
             <legend>lunch</legend>
-            <input type="text" placeholder="what would you take for lunch">
+
+            <label for="lunch-meal">lunch meal</label>
+            <input type="text" name="lunch-meal" placeholder="what would you take for lunch">
+            <label for="lunch-time">Lunch Time</label>
             <input type="datetime" name="lunch-time" id="lunch-time" placeholder="slect timefor lunch">
           </fieldset>
           <fieldset>
             <legend>dinner</legend>
-            <input type="text" placeholder="what would you take dinner breakfast">
+
+            <label for="dinner-meal">dinner Meal</label>
+            <input type="text" name="dinner-time" placeholder="what would you take dinner breakfast">
+            <label for="dinner-time">dinner time</label>
             <input type="datetime" name="dineer-time" id="dinner-time" placeholder="select time for dinner">
           </fieldset>
-          <input type="submit" value="update">
+          <input type="submit" value="save preferences">
         </form>
       </div>
     </section>
