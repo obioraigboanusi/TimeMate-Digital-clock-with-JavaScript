@@ -118,17 +118,52 @@ button:active{
   font-weight: bold;
   background-color: #ffebcd;
   border: 2px solid white;
-}
+  }
+  input[type='submit']{
+    border-style: none;
+    padding: 10px 15px;
+    margin: 10px;
+    color: white;
+    font-weight: bold;
+    background-color: green;
+    border: 2px solid green;
+    cursor: pointer;
+  }
+
+
 .m-bottom{
   margin-bottom: 10px;
 }
 span{
   padding:0 10px;
 }
-
-
-
-
-form{
-  display: none;
+input[type='text'], input[type='dateTime']{
+  padding: 5px 10px;
+  font-weight: bold;
+  font-size: 1em;
+  background-color: honeydew;
+  display: block;
+  margin-bottom: 5px;
+  border-style: none;
+  width: 100%;
+}
+input[type='text']{
+  margin-bottom: 20px;
+}
+legend{
+  text-transform: capitalize;
+  font-weight:bold;
+  font-size: 1.5em;
+}
+label{
+  text-transform: capitalize;
+  display: block;
+  text-align: left;
+  margin-bottom: 10px;
+}
+fieldset{
+  margin-bottom:20px;
+  padding: 20px;
+  max-width: 500px;
+  /* display: inline; */
 }
