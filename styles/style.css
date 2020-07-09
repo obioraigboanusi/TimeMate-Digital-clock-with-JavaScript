@@ -44,7 +44,7 @@ p, span{
   background-color: grey;
   margin-left: auto;
   margin-right: auto;
-  background-image: url('/images/images.jpg');
+  background-image: url('images/images.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
