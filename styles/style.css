@@ -106,6 +106,8 @@ button{
   background-color: transparent;
   border: 2px solid gold;
   cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
 }
 button:hover{
   color: white;
@@ -119,7 +121,7 @@ button:active{
   background-color: #ffebcd;
   border: 2px solid white;
   }
-  input[type='submit']{
+  #submit{
     border-style: none;
     padding: 10px 15px;
     margin: 10px;
@@ -164,6 +166,11 @@ label{
 fieldset{
   margin-bottom:20px;
   padding: 20px;
-  max-width: 500px;
+  width: 500px;
   /* display: inline; */
+}
+#form, #submit{
+  display: none;
+  margin-left: auto;
+  margin-right: auto;
 }
