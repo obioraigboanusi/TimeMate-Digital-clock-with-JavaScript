@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="/styles/style.css">
-  <title>TimeMate | Digital Color</title>
+  <link rel="stylesheet" type="text/css" href="styles/style.css">
+  <title>TimeMate | Digital Clock</title>
 </head>
 
 <body>
@@ -26,49 +26,62 @@
           <p id="seconds">_ _</p>
           <p class="bg-brown w-100">Seconds</p>
         </div>
+        <div class="time-box flex col  col j-center ali-center">
+          <p id="meridian">_ _</p>
+          <p class="bg-brown w-100">Meridian</p>
+        </div>
       </div>
-      <div class="container flex row j-center t-center m-bottom">
-        <p>The time is:</p><span id="meal-time">_ _</span>
+      <div id="doYou">
+        <div class="container flex row j-center t-center m-bottom">
+          <p>It's<span id="meal-time">_ _</span>, your<span id="meal" class="meal">Breakfast</span> time</p>
+        </div>
+        <div id="photo-container" class="photo-container m-bottom">
+          <p id="gretings" class="greeting">Enjoy your <span id="food"> beans</span></p>
+        </div>
+        <div class="container t-center m-bottom">
+          <p>Do you want to update your meal preferences?</p>
+          <button id="setPreference">Update Preferences!</button>
+        </div>
       </div>
-      <div class="flex col j-center ali-center m-bottom">
-        <p id="meal" class="meal">Breakfast time</p>
-      </div>
-      <div id="photo-container" class="photo-container m-bottom">
-        <p id="gretings" class="greeting">Enjoy your beans</p>
-      </div>
-      <div class="container t-center m-bottom">
-        <p>Do you want to update your meal preferences?</p>
-        <button id="setPreference">Update Preferences!</button>
-        <form action="" class="flex col ali-center j-center">
-          <fieldset>
-            <legend>breakfast</legend>
-            <label for="breakfastMeal">breakfast meal</label>
-            <input type="text" name="breakfastMeal" placeholder="what would you take for breakfast">
-            <label for="breakfast-time">Breakfast Time</label>
-            <input type="datetime" name="breakfast-time" id="breakfast-time" placeholder="select time for breakfast">
-          </fieldset>
-          <fieldset>
-            <legend>lunch</legend>
+      <div id="form" action="" class="col ali-center j-center">
+        <h3>Please set your preferences</h3>
+        <fieldset>
+          <legend>breakfast</legend>
+          <label for="breakfastMeal">breakfast meal</label>
+          <input type="text" name="breakfast-meal" placeholder="what would you take for breakfast">
+          <label for="breakfast-time">Breakfast Time</label>
+          <input type="datetime" name="breakfast-time" id="breakfast-time" placeholder="select time for breakfast">
+        </fieldset>
+        <fieldset>
+          <legend>lunch</legend>
 
-            <label for="lunch-meal">lunch meal</label>
-            <input type="text" name="lunch-meal" placeholder="what would you take for lunch">
-            <label for="lunch-time">Lunch Time</label>
-            <input type="datetime" name="lunch-time" id="lunch-time" placeholder="slect timefor lunch">
-          </fieldset>
-          <fieldset>
-            <legend>dinner</legend>
+          <label for="lunch-meal">lunch meal</label>
+          <input type="text" name="lunch-meal" placeholder="what would you take for lunch">
+          <label for="lunch-time">Lunch Time</label>
+          <input type="datetime" name="lunch-time" id="lunch-time" placeholder="slect timefor lunch">
+        </fieldset>
+        <fieldset>
+          <legend>dinner</legend>
 
-            <label for="dinner-meal">dinner Meal</label>
-            <input type="text" name="dinner-time" placeholder="what would you take dinner breakfast">
-            <label for="dinner-time">dinner time</label>
-            <input type="datetime" name="dineer-time" id="dinner-time" placeholder="select time for dinner">
-          </fieldset>
-          <input type="submit" value="save preferences">
-        </form>
+          <label for="dinner-meal">dinner Meal</label>
+          <input type="text" name="dinner-meal" placeholder="what would you take dinner breakfast">
+          <label for="dinner-time">dinner time</label>
+          <input type="datetime" name="dinner-time" id="dinner-time" placeholder="select time for dinner" selectBoxOptions='5pm;6pm;7pm;8pm;9pm;10pm'>
+          <datalist>
+            <option value="5"></option>
+            <option value="6"></option>
+            <option value="7"></option>
+            <option value="8"></option>
+            <option value="9"></option>
+            <option value="10"></option>
+          </datalist>
+        </fieldset>
+        <button id="submit">Submit</button>
       </div>
+      
     </section>
   </main>
-  <script src="/scripts/app.js"></script>
+  <script src="scripts/app.js"></script>
 </body>
 
 </html>
