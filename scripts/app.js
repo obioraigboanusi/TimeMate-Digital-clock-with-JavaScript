@@ -1,4 +1,18 @@
 "use strict";
+
+let breakfastType = {
+  foodName: "beans",
+  foodTime: 7
+};
+let lunchType = {
+  foodName: "beans",
+  foodTime: 12
+};
+let dinnerType = {
+  foodName: "beans",
+  foodTime: 6
+};
+
 function clock() {
   let date = new Date();
   let hours = date.getHours();
@@ -22,69 +36,61 @@ function clock() {
   const options = { weekday: 'long', month: 'long', day: 'numeric' }
   document.querySelector('#today').innerText = date.toLocaleDateString("en-US", options);
 
+  // current time
+  document.querySelector('#current-time').innerText = hours + ':' + minutes + meridian + ',';
+  // display Current food or Tast
+
+
+  const mealDisplay = document.querySelector('#meal');
+  const foodDisplay = document.querySelector('#food');
+  const photoDisplay = document.querySelector('#photo-container');
+
+  switch (hours) {
+    case breakfastType.foodTime:
+      mealDisplay.innerText = "Breakfast";
+      foodDisplay.innerText = breakfastType.foodName;
+      photoDisplay.style.backgroundImage = "url('/images/pic01.jpg')";
+    case lunchType.foodTime:
+      mealDisplay.innerText = "Lunch";
+      foodDisplay.innerText = lunchType.foodName;
+      photoDisplay.style.backgroundImage = "url('/images/pic02.jpg')";
+    case dinnerType.foodTime:
+      mealDisplay.innerText = "Dinner";
+      foodDisplay.innerText = dinnerType.foodName;
+      photoDisplay.style.backgroundImage = "url('/images/pic03.jpg')";
+    default:
+      mealDisplay.innerText = "Coding";
+      foodDisplay.innerText = "coding";
+      photoDisplay.style.backgroundImage = "url('/images/pic02.jpg')";
+  };
+
+
   //update time
   let update = setTimeout(clock, 500);
 }
 clock();
 
+// track the form
+const form = document.querySelector('#form');
 
+// openFormBtn.onclick = () => {
+//   form.style.display = 'flex';
+//   document.getElementById('done').style.display = 'block';
+//   openFormBtn.style.display = 'none';
+//   document.getElementById('doYou').style.display = 'none';
+// };
 
+// closeFormBtn.onclick = () => {
+//   form.style.display = 'none';
+//   openFormBtn.style.display = 'block';
+//   document.getElementById('doYou').style.display = 'block';
+//   document.getElementById('done').style.display = 'none';
+// };
 
+// clearAllBtn.onclick = () => {
+//   
+// };
 
+// clearAllBtn.onclick = () => {
 
-let openFormBtn = document.querySelector('#setPreference');
-let saveFormBtn = document.querySelector('#submit');
-let form = document.querySelector('#form');
-
-let breakfastMeal;
-let lunchMeal;
-let dinnerMeal;
-let breakfastTime;
-let lunchTime;
-let dinnerTime;
-
-
-let breakfastMealvalue = document.querySelector('input[name= breakfast-meal]').value;
-let lunchMealvalue = document.querySelector('input[name=lunch-meal]').value;
-let dinnerMealvalue = document.querySelector('input[name= dinner-meal]').value;
-let breakfastTimevalue = document.querySelector('input[name=breakfast-time]').value;
-let lunchTimevalue = document.querySelector('input[name=lunch-time]').value;
-let dinnerTimevalue = document.querySelector('input[name=dinner-time]').value;
-
-
-
-
-openFormBtn.onclick = () => {
-  form.style.display = 'flex';
-  document.getElementById('submit').style.display = 'block';
-  openFormBtn.style.display = 'none';
-  document.getElementById('doYou').style.display = 'none';
-};
-
-saveFormBtn.onclick = () => {
-  form.style.display = 'none';
-  openFormBtn.style.display = 'block';
-  document.getElementById('doYou').style.display = 'block';
-  document.getElementById('submit').style.display = 'none';
-  breakfastMeal = breakfastMealvalue;
-};
-
-const hour = document.querySelector('#hour').value;
-const mealTime =document.querySelector('#hour').value;
-
-if (hour==breakfastTimevalue ){
-  mealTime = breakfastTimevalue;
-}else if(hour==lunchTimevalue){
-  mealTime = lunchTimevalue;
-}else if (hour==dinnerTimevalue){
-  mealTime = dinnerTimevalue;
-};
-
-
-
-
-
-
-// let saveupdate = document.querySelector('input[type=submit])
-// let form = document.querySelector('#setPreference');
-  // setPreference.addEventListener(onclick, console.log('button was clicked'));
+// };

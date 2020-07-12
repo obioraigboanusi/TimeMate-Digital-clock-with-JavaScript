@@ -2,86 +2,90 @@
 <html lang="en-US">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="styles/style.css">
-  <title>TimeMate | Digital Clock</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <title>TimeMate | Digital Clock</title>
 </head>
 
 <body>
-  <main>
-    <section>
-      <h1 class="bg-brown">TimeMate</h1>
-      <p id="today" class="t-center m-bottom">_ _ _</p>
-      <div id="clock-container" class="container flex row j-center t-center m-bottom">
-        <div class="time-box flex col j-center ali-center">
-          <p id="hour">_ _ </p>
-          <p class="bg-brown w-100">Hours</p>
-        </div>
-        <div class="time-box flex col j-center ali-center">
-          <p id="minute">_ _</p>
-          <p class="bg-brown w-100">Minutes</p>
-        </div>
-        <div class="time-box flex col  col j-center ali-center">
-          <p id="seconds">_ _</p>
-          <p class="bg-brown w-100">Seconds</p>
-        </div>
-        <div class="time-box flex col  col j-center ali-center">
-          <p id="meridian">_ _</p>
-          <p class="bg-brown w-100">Meridian</p>
-        </div>
-      </div>
-      <div id="doYou">
-        <div class="container flex row j-center t-center m-bottom">
-          <p>It's<span id="meal-time">_ _</span>, your<span id="meal" class="meal">Breakfast</span> time</p>
-        </div>
-        <div id="photo-container" class="photo-container m-bottom">
-          <p id="gretings" class="greeting">Enjoy your <span id="food"> beans</span></p>
-        </div>
-        <div class="container t-center m-bottom">
-          <p>Do you want to update your meal preferences?</p>
-          <button id="setPreference">Update Preferences!</button>
-        </div>
-      </div>
-      <div id="form" action="" class="col ali-center j-center">
-        <h3>Please set your preferences</h3>
-        <fieldset>
-          <legend>breakfast</legend>
-          <label for="breakfastMeal">breakfast meal</label>
-          <input type="text" name="breakfast-meal" placeholder="what would you take for breakfast">
-          <label for="breakfast-time">Breakfast Time</label>
-          <input type="datetime" name="breakfast-time" id="breakfast-time" placeholder="select time for breakfast">
-        </fieldset>
-        <fieldset>
-          <legend>lunch</legend>
+    <main>
+        <section class="flex col ali-center j-center">
+            <h1 class="bg-brown">TimeMate</h1>
+            <p id="today" class="t-center m-bottom">_ _ _</p>
+            <div id="clock-container" class="container flex row j-center t-center m-bottom">
+                <div class="time-box flex col j-center ali-center">
+                    <p id="hour">_ _ </p>
+                    <p class="bg-brown w-100">Hours</p>
+                </div>
+                <div class="time-box flex col j-center ali-center">
+                    <p id="minute">_ _</p>
+                    <p class="bg-brown w-100">Minutes</p>
+                </div>
+                <div class="time-box flex col  col j-center ali-center">
+                    <p id="seconds">_ _</p>
+                    <p class="bg-brown w-100">Seconds</p>
+                </div>
+                <div class="time-box flex col  col j-center ali-center">
+                    <p id="meridian">_ _</p>
+                    <p class="bg-brown w-100">Meridian</p>
+                </div>
+            </div>
+            <div id="doYou">
+                <div class="container flex row j-center t-center m-bottom">
+                    <p>It's<span id="current-time">_ _</span><span id="meal" class="meal">Breakfast</span>time</p>
+                </div>
+                <div id="photo-container" class="photo-container m-bottom">
+                    <p id="gretings" class="greeting">Enjoy your <span id="food"> beans</span></p>
+                </div>
+                <div class="container t-center m-bottom">
+                    <p>Do you want to update your meal preferences?</p>
+                    <button id="open-form">Update Preferences!</button>
+                </div>
+            </div>
+            <!-- <div> -->
+            <form id="form" class="col ali-center j-center">
+                <h3>Please set your preferences</h3>
+                <label for="meal-name">breakfast meal</label>
+                <input type="text" name="meal-name" placeholder="what would you take" id="meal-name">
+                <label for="meal-time">when would you like to eat</label>
+                <input type="number" name="meal-time" id="meal-time"
+                    placeholder="select time for meal">
+                <label for="meal-type">Breakfast Type</label>
+                <select name="meal-type" id="meal-type" class="">
+                    <option value="breakfast">Breakfast</option>
+                    <option value="lunch">Lunch</option>
+                    <option value="dinner">Dinner</option>
+                </select>
+                <div class="container flex row ali-center j-between">
+                    <button id="add-item" class="btn">Add</button>
+                    <span id="clear-all" class="btn">Clear all</span>
+                    <span id="done" class="btn">Done</span>
+                </div>
+            </form>
 
-          <label for="lunch-meal">lunch meal</label>
-          <input type="text" name="lunch-meal" placeholder="what would you take for lunch">
-          <label for="lunch-time">Lunch Time</label>
-          <input type="datetime" name="lunch-time" id="lunch-time" placeholder="slect timefor lunch">
-        </fieldset>
-        <fieldset>
-          <legend>dinner</legend>
+            <table class="container">
+                <thead>
+                    <tr>
+                        <th>Meal type</th>
+                        <th>Meal name</th>
+                        <th>time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+            <!-- </div> -->
+            <!-- </div> -->
 
-          <label for="dinner-meal">dinner Meal</label>
-          <input type="text" name="dinner-meal" placeholder="what would you take dinner breakfast">
-          <label for="dinner-time">dinner time</label>
-          <input type="datetime" name="dinner-time" id="dinner-time" placeholder="select time for dinner" selectBoxOptions='5pm;6pm;7pm;8pm;9pm;10pm'>
-          <datalist>
-            <option value="5"></option>
-            <option value="6"></option>
-            <option value="7"></option>
-            <option value="8"></option>
-            <option value="9"></option>
-            <option value="10"></option>
-          </datalist>
-        </fieldset>
-        <button id="submit">Submit</button>
-      </div>
-      
-    </section>
-  </main>
-  <script src="scripts/app.js"></script>
+        </section>
+    </main>
+    <script src="scripts/app.js"></script>
 </body>
 
 </html>

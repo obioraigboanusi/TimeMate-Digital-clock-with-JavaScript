@@ -1,127 +1,151 @@
-*{
-  box-sizing: border-box;
+* {
+    box-sizing: border-box;
 }
+
+html, body, h1, h2, h3, h4, h5, h6, p, span {
+    margin: 0;
+    padding: 0;
+}
+
 body {
-  background-color: #311e25;
-  color: #ffebcd;
-  padding: 0;
-  margin: 0;
-  font-size: 16px;
-  font-family: Arial, Helvetica, sans-serif;
-}
-h1{
-  font-size: 3em;
-  text-align: center;
-  font-weight: bolder;
-  max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-p, span{
-  padding: 0;
-  margin: 0;
-  font-size: 1.2em;
-  font-weight: normal;
-}
-.time-box{
-  background-color: #ffebcd;
-  width: 100px;
-  height: 100px;
-  margin:0 10px;
-}
-.time-box  p:first-of-type{
-  font-size: 3em;
-  font-weight: 900;
-  color: rgb(247, 116, 8);
-}
-.photo-container{
-  min-height: 200px;
-  min-width: 250px;
-  max-height: 300px;
-  max-width: 500px;
-  background-color: grey;
-  margin-left: auto;
-  margin-right: auto;
-  background-image: url('images/images.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-}
-.meal{
- font-size: 1.5em;
-}
-.greeting{
-  position: absolute;
-  bottom:5px;
-  right: 5px;
-  background-color: #3a0d0db7;
+    background-color: #311e25;
+    color: #ffebcd;
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
+h1 {
+    font-size: 3em;
+    text-align: center;
+    font-weight: bolder;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+}
 
+p, span {
+    padding: 0;
+    margin: 0;
+    font-size: 1.2em;
+    font-weight: normal;
+}
 
+.time-box {
+    background-color: #ffebcd;
+    width: 100px;
+    height: 100px;
+    margin: 0 10px;
+}
 
-.bg-brown{
-  background-color: #3a0d0d;
-  padding-top: 5px;
-  padding-bottom: 5px;
+.time-box p:first-of-type {
+    font-size: 3em;
+    font-weight: 900;
+    color: rgb(247, 116, 8);
 }
-.container, .w-100{
-  width: 100%;
+
+.photo-container {
+    min-height: 200px;
+    min-width: 250px;
+    max-height: 300px;
+    max-width: 500px;
+    background-color: grey;
+    margin-left: auto;
+    margin-right: auto;
+    background-image: url('/images/images.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
 }
-.flex{
-  display: flex;
+
+.meal {
+    font-size: 1.5em;
 }
-.col{
-  flex-direction: column;
+
+.greeting {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    background-color: #3a0d0db7;
 }
-.row{
-  flex-direction: row;
+
+.bg-brown {
+    background-color: #3a0d0d;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
-.j-center{
-  justify-content: center;
+
+.container, .w-100 {
+    width: 100%;
 }
-.j-space-around{
-  justify-content: space-around;
+
+.flex {
+    display: flex;
 }
-.ali-center{
-  align-items: center;
+
+.col {
+    flex-direction: column;
 }
-.wrap{
-  flex-wrap: wrap;
+
+.row {
+    flex-direction: row;
 }
-.t-center{
-  text-align: center;
+
+.j-center {
+    justify-content: center;
 }
-.j-between{
-  justify-content: space-between;
+
+.j-space-around {
+    justify-content: space-around;
 }
-button{
-  border-style: none;
-  padding: 10px 15px;
-  margin: 10px;
-  color: gold;
-  font-weight: bold;
-  background-color: transparent;
-  border: 2px solid gold;
-  cursor: pointer;
-  margin-left: auto;
-  margin-right: auto;
+
+.ali-center {
+    align-items: center;
 }
-button:hover{
-  color: white;
-  font-weight: bold;
-  background-color: transparent;
-  border: 2px solid white;
+
+.wrap {
+    flex-wrap: wrap;
 }
-button:active{
-  color: #3a0d0d;
-  font-weight: bold;
-  background-color: #ffebcd;
-  border: 2px solid white;
-  }
-  #submit{
+
+.t-center {
+    text-align: center;
+}
+
+.j-between {
+    justify-content: space-between;
+}
+
+button, .btn {
+    border-style: none;
+    padding: 10px 15px;
+    margin: 10px;
+    color: gold;
+    font-weight: bold;
+    background-color: transparent;
+    border: 2px solid gold;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button:hover, .btn:hover {
+    color: white;
+    font-weight: bold;
+    background-color: transparent;
+    border: 2px solid white;
+}
+
+button:active, .btn:active {
+    color: #3a0d0d;
+    font-weight: bold;
+    background-color: #ffebcd;
+    border: 2px solid white;
+}
+
+#submit {
     border-style: none;
     padding: 10px 15px;
     margin: 10px;
@@ -130,47 +154,61 @@ button:active{
     background-color: green;
     border: 2px solid green;
     cursor: pointer;
-  }
+    width: 80px;
+}
 
+.m-bottom {
+    margin-bottom: 10px;
+}
 
-.m-bottom{
-  margin-bottom: 10px;
+span {
+    padding: 0 10px;
 }
-span{
-  padding:0 10px;
+
+input[type='text'], input[type='number'], select {
+    padding: 5px 10px;
+    font-weight: bold;
+    font-size: 1em;
+    background-color: honeydew;
+    display: block;
+    margin-bottom: 20px;
+    border-style: none;
+    width: 100%;
 }
-input[type='text'], input[type='dateTime']{
-  padding: 5px 10px;
-  font-weight: bold;
-  font-size: 1em;
-  background-color: honeydew;
-  display: block;
-  margin-bottom: 5px;
-  border-style: none;
-  width: 100%;
+
+label {
+    text-transform: capitalize;
+    display: block;
+    text-align: left;
+    margin-bottom: 10px;
+    width: 100%;
 }
-input[type='text']{
-  margin-bottom: 20px;
+
+form {
+    margin-bottom: 20px;
+    padding: 20px;
+    width: 500px;
 }
-legend{
-  text-transform: capitalize;
-  font-weight:bold;
-  font-size: 1.5em;
+
+#form, #submit {
+    /* display: none; */
+    margin-left: auto;
+    margin-right: auto;
 }
-label{
-  text-transform: capitalize;
-  display: block;
-  text-align: left;
-  margin-bottom: 10px;
+
+table, th, td {
+    border-collapse: collapse;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border: 1px solid white;
+    width: 50px
 }
-fieldset{
-  margin-bottom:20px;
-  padding: 20px;
-  width: 500px;
-  /* display: inline; */
+
+table {
+    max-width: 500px;
 }
-#form, #submit{
-  display: none;
-  margin-left: auto;
-  margin-right: auto;
+
+#current-time {
+    text-transform: lowercase;
 }
