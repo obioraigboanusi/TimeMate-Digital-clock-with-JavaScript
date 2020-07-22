@@ -44,13 +44,12 @@
                 </div>
             </div>
             <!-- <div> -->
-            <form id="form" class="col ali-center j-center">
+            <div id="form" class="form">
                 <h3>Please set your preferences</h3>
                 <label for="meal-name">breakfast meal</label>
                 <input type="text" name="meal-name" placeholder="what would you take" id="meal-name">
-                <label for="meal-time">when would you like to eat</label>
-                <input type="number" name="meal-time" id="meal-time"
-                    placeholder="select time for meal">
+                <label for="meal-time">time to eat</label>
+                <input type="number" name="meal-time" id="meal-time" placeholder="select time to eat e.g 12">
                 <label for="meal-type">Breakfast Type</label>
                 <select name="meal-type" id="meal-type" class="">
                     <option value="breakfast">Breakfast</option>
@@ -62,27 +61,17 @@
                     <span id="clear-all" class="btn">Clear all</span>
                     <span id="done" class="btn">Done</span>
                 </div>
-            </form>
-
+            </div>
             <table class="container">
                 <thead>
                     <tr>
-                        <th>Meal type</th>
-                        <th>Meal name</th>
-                        <th>time</th>
+                        <th>food type</th>
+                        <th>food name</th>
+                        <th>food time</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </tbody>
+                <tbody id="tboy"></tbody>
             </table>
-            <!-- </div> -->
-            <!-- </div> -->
-
         </section>
     </main>
     <script src="scripts/app.js"></script>
