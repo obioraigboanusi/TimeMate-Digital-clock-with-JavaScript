@@ -10,7 +10,7 @@ html, body, h1, h2, h3, h4, h5, h6, p, span {
 body {
     background-color: #311e25;
     color: #ffebcd;
-    font-size: 16px;
+    font-size: 15px;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -33,9 +33,10 @@ p, span {
 
 .time-box {
     background-color: #ffebcd;
-    width: 100px;
-    height: 100px;
-    margin: 0 10px;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    font-size: 1em;
 }
 
 .time-box p:first-of-type {
@@ -180,11 +181,15 @@ label {
     margin-bottom: 10px;
     width: 100%;
 }
+.formdiv{
+    width: 100%;
+}
 
 .form {
     margin-bottom: 20px;
     padding: 20px;
-    width: 500px;
+    width: 100%;
+    display: none;
 }
 
 .form, #submit {
@@ -204,18 +209,15 @@ table, th, td {
 }
 
 table {
-    max-width: 500px;
+    width: 90%;
 }
-
+h3{
+    margin: 10px 0;
+}
 #current-time {
     text-transform: lowercase;
 }
 
-@media screen and (min-width: 1000px) {
-    .formdiv{
-        display: flexbox;
-        flex-direction: row;
-        width: 100%;
-    }
-
-}
+/* @media screen and (min-width: 1000px) {
+   
+} */

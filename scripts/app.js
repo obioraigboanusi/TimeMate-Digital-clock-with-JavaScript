@@ -17,7 +17,6 @@ const tableBody = document.querySelector('tbody');
 
 window.addEventListener('load', () => {
   if (dataItem) {
-    console.log('yes');
     loadDetails();
   } else {
     console.log('no');
@@ -33,19 +32,16 @@ button.addEventListener('click', function () {
   let fType = foodType.value;
   if (fTime && fName) {
     if (fType == 'breakfast') {
-      console.log(fType, fName, fTime);
       data.breakfast.food_Name = fName;
       data.breakfast.food_Time = fTime;
       localStorage.setItem("details", JSON.stringify(data));
       updateContent();
     } else if (fType == 'lunch') {
-      console.log(fType, fName, fTime);
       data.lunch.food_Name = fName;
       data.lunch.food_Time = fTime;
       localStorage.setItem("details", JSON.stringify(data));
       updateContent();
     } else {
-      console.log(fType, fName, fTime);
       data.dinner.food_Name = fName;
       data.dinner.food_Time = fTime;
       localStorage.setItem("details", JSON.stringify(data));
@@ -72,8 +68,10 @@ const clearBtn = document.getElementById('clear-all');
 const doneBtn = document.getElementById('done');
 const form = document.querySelector('#form');
 const openBtn = document.getElementById('open-form');
+
 clearBtn.addEventListener('click', () => {
-  
+  localStorage.clear();
+  tableBody.innerHTML = '';
 });
 
 doneBtn.addEventListener('click', () => {
@@ -83,11 +81,11 @@ doneBtn.addEventListener('click', () => {
   document.getElementById('done').style.display = 'none';
 })
 openBtn.onclick = () => {
-    form.style.display = 'flex';
-    document.getElementById('done').style.display = 'block';
-    openBtn.style.display = 'none';
-    document.getElementById('doYou').style.display = 'none';
-  };
+  form.style.display = 'flex';
+  document.getElementById('done').style.display = 'block';
+  openBtn.style.display = 'none';
+  document.getElementById('doYou').style.display = 'none';
+};
 
 function addRow(fType, fName, fTime) {
   const row = `<tr><td class="foodtype"> ${fType} </td><td>${fName}</td><td>${fTime}</td></tr>`;
@@ -106,9 +104,7 @@ function clock() {
   let seconds = date.getSeconds();
 
   let meridian = (hours < 12) ? "AM" : "PM";
-
-  hours = (hours > 12) ? (hours - 12) : hours;
-  hours = (hours < 10) ? ("0" + hours) : hours;
+  hours = hourCalc(hours);
   minutes = (minutes < 10) ? ("0" + minutes) : minutes;
   seconds = (seconds < 10) ? ("0" + seconds) : seconds;
 
@@ -131,25 +127,33 @@ function clock() {
   const foodDisplay = document.querySelector('#food');
   const photoDisplay = document.querySelector('#photo-container');
 
-  switch (hours) {
-    case data.breakfast.food_Time:
-      mealDisplay.innerText = "Breakfast";
-      foodDisplay.innerText = breakfastType.foodName;
-      photoDisplay.style.backgroundImage = "url('./images/pic01.jpg')";
-    case data.lunch.food_Time:
-      mealDisplay.innerText = "Lunch";
-      foodDisplay.innerText = lunchType.foodName;
-      photoDisplay.style.backgroundImage = "url('./images/pic02.jpg')";
-    case data.dinner.food_Time:
-      mealDisplay.innerText = "Dinner";
-      foodDisplay.innerText = dinnerType.foodName;
-      photoDisplay.style.backgroundImage = "url('./images/pic03.jpg')";
-    default:
-      mealDisplay.innerText = "Coding";
-      foodDisplay.innerText = "coding";
-      photoDisplay.style.backgroundImage = "url('./images/pic02.jpg')";
+  if (hours == hourCalc(data.breakfast.food_Time)) {
+    mealDisplay.innerText = "Breakfast";
+    foodDisplay.innerText = data.breakfast.food_Name;
+    photoDisplay.style.backgroundImage = "url('./images/pic01.jpg')";
+  } else if (hours == hourCalc(data.lunch.food_Time)) {
+    mealDisplay.innerText = "Lunch";
+    foodDisplay.innerText = data.lunch.food_Name;
+    photoDisplay.style.backgroundImage = "url('./images/pic02.jpg')";
+  } else if (hours == hourCalc(data.dinner.food_Time)) {
+    mealDisplay.innerText = "Dinner";
+    foodDisplay.innerText = data.dinner.food_Name;
+    photoDisplay.style.backgroundImage = "url('./images/pic03.jpg')";
+  } else {
+    mealDisplay.innerText = "Coding";
+    foodDisplay.innerText = "coding";
+    photoDisplay.style.backgroundImage = "url('./images/pic02.jpg')";
   };
 
+  function hourCalc(el) {
+
+    el = (el == 0) ? (el = 12) : el;
+    el = (el > 12) ? (el - 12) : el;
+    el = (el < 10) ? ("0" + el) : el;
+    // console.log(el)
+    return el;
+  }
+ 
   //update time
   let update = setTimeout(clock, 500);
 }
