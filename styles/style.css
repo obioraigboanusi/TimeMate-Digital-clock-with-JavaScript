@@ -181,7 +181,8 @@ label {
     margin-bottom: 10px;
     width: 100%;
 }
-.formdiv{
+
+.formdiv {
     width: 100%;
 }
 
@@ -210,14 +211,54 @@ table, th, td {
 
 table {
     width: 90%;
+    margin-bottom: 20px;
 }
-h3{
+
+h3 {
     margin: 10px 0;
 }
+
 #current-time {
     text-transform: lowercase;
 }
-
-/* @media screen and (min-width: 1000px) {
+footer nav{
+    background-color: #00000050;
+    color: #ffffff;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+  }
+  footer p{
+      margin: 5px auto;
+  }
+  i{
+    width: 20px;
+    color: white;
    
-} */
+  }
+  a{
+    margin: auto 10px;
+  }
+hr{
+    margin: 0;
+    padding: 0;
+}
+.nopadding{
+    padding-left: 0;
+}
+@media screen and (min-width: 700px) {
+    table, .form, .clock-container {
+        max-width: 500px;
+    }
+    .clock-container {
+        max-width: 500px;
+    }
+    .time-box {
+        background-color: #ffebcd;
+        width: 100px;
+        height: 100px;
+        margin: 0 10px;
+        /* border-radius: 20px; */
+        font-size: 1em;
+    }
+}

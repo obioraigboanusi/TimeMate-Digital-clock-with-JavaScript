@@ -5,15 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>TimeMate | Digital Clock</title>
 </head>
-
 <body class="container">
     <main>
         <section class="flex col ali-center j-center w-100">
             <h1 class="bg-brown">TimeMate</h1>
             <p id="today" class="t-center m-bottom">_ _ _</p>
-            <div id="clock-container" class="container flex row j-center t-center m-bottom">
+            <div id="clock-container" class="clock-container container flex row j-center t-center m-bottom">
                 <div class="time-box flex col j-center ali-center">
                     <p id="hour">_ _ </p>
                     <p class="bg-brown w-100">Hours</p>
@@ -34,10 +34,10 @@
             <div class="formdiv">
                 <div id="doYou">
                     <div class="container flex row j-center t-center m-bottom">
-                        <p>It's<span id="current-time">_ _</span><span id="meal" class="meal">_ _</span>time</p>
+                        <p>It's<span id="current-time">_ _</span><span id="meal" class="meal nopadding">coding</span>time</p>
                     </div>
                     <div id="photo-container" class="photo-container m-bottom">
-                        <p id="gretings" class="greeting">Enjoy your <span id="food"> _ _</span></p>
+                        <p id="gretings" class="greeting">Enjoy your <span id="food" class="nopadding">coding</span></p>
                     </div>
                     <div class="container t-center m-bottom">
                         <p>Do you want to update your meal preferences?</p>
@@ -77,6 +77,20 @@
 
         </section>
     </main>
+    <footer>
+        <hr>
+        <nav>
+            <small>
+                <p class="t-center">Copyright &copy; 2020. All Rights Reserved.</p>
+                <p>Built by: Obiora Igboanusi. Inspired by @Dev_Tolu of GADS2020</p>
+            </small>
+            <div class="flex row j-center ali-center icondiv">
+                <a href="https://www.facebook.com/chikeobi.igboanusil"><i class="fa fa-facebook icon"></i></a>
+                <a href="https://www.twitter.com/IgboanusiObiora"><i class="fa fa-twitter icon"></i></a>
+                <a href="https://www.linkedin.com/in/obiora-igboanusi-586569140"><i class="fa fa-github icon"></i></a>
+            </div>
+        </nav>
+    </footer>
     <script src="scripts/app.js"></script>
 </body>
 

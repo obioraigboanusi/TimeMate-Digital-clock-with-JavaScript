@@ -19,12 +19,9 @@ window.addEventListener('load', () => {
   if (dataItem) {
     loadDetails();
   } else {
-    console.log('no');
     localStorage.setItem('details', JSON.stringify(details))
   };
 });
-
-
 
 button.addEventListener('click', function () {
   let fTime = foodTime.value;
@@ -122,20 +119,19 @@ function clock() {
   document.querySelector('#current-time').innerText = hours + ':' + minutes + meridian + ',';
   // display Current food or Tast
 
-
   const mealDisplay = document.querySelector('#meal');
   const foodDisplay = document.querySelector('#food');
   const photoDisplay = document.querySelector('#photo-container');
 
-  if (hours == hourCalc(data.breakfast.food_Time)) {
+  if (hours === hourCalc(data.breakfast.food_Time)) {
     mealDisplay.innerText = "Breakfast";
     foodDisplay.innerText = data.breakfast.food_Name;
     photoDisplay.style.backgroundImage = "url('./images/pic01.jpg')";
-  } else if (hours == hourCalc(data.lunch.food_Time)) {
+  } else if (hours === hourCalc(data.lunch.food_Time)) {
     mealDisplay.innerText = "Lunch";
     foodDisplay.innerText = data.lunch.food_Name;
     photoDisplay.style.backgroundImage = "url('./images/pic02.jpg')";
-  } else if (hours == hourCalc(data.dinner.food_Time)) {
+  } else if (hours === hourCalc(data.dinner.food_Time)) {
     mealDisplay.innerText = "Dinner";
     foodDisplay.innerText = data.dinner.food_Name;
     photoDisplay.style.backgroundImage = "url('./images/pic03.jpg')";
@@ -150,7 +146,6 @@ function clock() {
     el = (el == 0) ? (el = 12) : el;
     el = (el > 12) ? (el - 12) : el;
     el = (el < 10) ? ("0" + el) : el;
-    // console.log(el)
     return el;
   }
  
