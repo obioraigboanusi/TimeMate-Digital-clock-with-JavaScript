@@ -36,13 +36,13 @@ button.addEventListener('click', function () {
       console.log(fType, fName, fTime);
       data.breakfast.food_Name = fName;
       data.breakfast.food_Time = fTime;
-      localStorage.setItem("details",JSON.stringify(data));
+      localStorage.setItem("details", JSON.stringify(data));
       updateContent();
     } else if (fType == 'lunch') {
       console.log(fType, fName, fTime);
       data.lunch.food_Name = fName;
       data.lunch.food_Time = fTime;
-      localStorage.setItem("details",JSON.stringify(data));
+      localStorage.setItem("details", JSON.stringify(data));
       updateContent();
     } else {
       console.log(fType, fName, fTime);
@@ -68,9 +68,30 @@ function loadDetails() {
   }
 };
 
+const clearBtn = document.getElementById('clear-all');
+const doneBtn = document.getElementById('done');
+const form = document.querySelector('#form');
+const openBtn = document.getElementById('open-form');
+clearBtn.addEventListener('click', () => {
+  
+});
+
+doneBtn.addEventListener('click', () => {
+  form.style.display = 'none';
+  openBtn.style.display = 'block';
+  document.getElementById('doYou').style.display = 'block';
+  document.getElementById('done').style.display = 'none';
+})
+openBtn.onclick = () => {
+    form.style.display = 'flex';
+    document.getElementById('done').style.display = 'block';
+    openBtn.style.display = 'none';
+    document.getElementById('doYou').style.display = 'none';
+  };
+
 function addRow(fType, fName, fTime) {
   const row = `<tr><td class="foodtype"> ${fType} </td><td>${fName}</td><td>${fTime}</td></tr>`;
-  
+
   tableBody.insertAdjacentHTML('beforeend', row);
 };
 function updateContent() {
@@ -133,70 +154,3 @@ function clock() {
   let update = setTimeout(clock, 500);
 }
 clock();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// track the form
-const form = document.querySelector('#form');
-
-// openFormBtn.onclick = () => {
-//   form.style.display = 'flex';
-//   document.getElementById('done').style.display = 'block';
-//   openFormBtn.style.display = 'none';
-//   document.getElementById('doYou').style.display = 'none';
-// };
-
-// closeFormBtn.onclick = () => {
-//   form.style.display = 'none';
-//   openFormBtn.style.display = 'block';
-//   document.getElementById('doYou').style.display = 'block';
-//   document.getElementById('done').style.display = 'none';
-// };
-
-// clearAllBtn.onclick = () => {
-//   
-// };
-
-// clearAllBtn.onclick = () => {
-
-// };
