@@ -146,7 +146,7 @@ function clock() {
     el = (el == 0) ? (el = 12) : el;
     el = (el > 12) ? (el - 12) : el;
     el = (el < 10) ? ("0" + el) : el;
-    return el;
+    return  el.toString();
   }
  
   //update time
