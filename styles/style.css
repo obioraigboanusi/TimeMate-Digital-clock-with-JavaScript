@@ -211,6 +211,7 @@ table, th, td {
 
 table {
     width: 90%;
+    max-width: 500px;
     margin-bottom: 20px;
 }
 
