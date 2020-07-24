@@ -35,7 +35,7 @@ p, span {
     background-color: #ffebcd;
     width: 80px;
     height: 80px;
-    margin: 0 5px;
+    margin: 0 3px;
     font-size: 1em;
 }
 
@@ -46,17 +46,24 @@ p, span {
 }
 
 .photo-container {
-    min-height: 200px;
-    min-width: 250px;
-    max-height: 300px;
+    height: auto;
     max-width: 500px;
     background-color: grey;
     margin-left: auto;
     margin-right: auto;
-    background-image: url('/images/images.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
     position: relative;
+}
+
+a {
+    color: skyblue;
+}
+
+.image {
+    height: auto;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 500px;
 }
 
 .meal {
@@ -116,43 +123,30 @@ p, span {
     justify-content: space-between;
 }
 
-button, .btn {
+.btn {
     border-style: none;
-    padding: 10px 15px;
+    padding: 10px 12px;
     margin: 10px;
-    color: gold;
-    font-weight: bold;
-    background-color: transparent;
-    border: 2px solid gold;
     cursor: pointer;
     margin-left: auto;
     margin-right: auto;
 }
 
-button:hover, .btn:hover {
+.open-form {
+    background-color: rgb(170, 78, 3);
     color: white;
     font-weight: bold;
-    background-color: transparent;
-    border: 2px solid white;
-}
-
-button:active, .btn:active {
-    color: #3a0d0d;
-    font-weight: bold;
-    background-color: #ffebcd;
-    border: 2px solid white;
-}
-
-#submit {
-    border-style: none;
-    padding: 10px 15px;
-    margin: 10px;
-    color: white;
-    font-weight: bold;
-    background-color: green;
-    border: 2px solid green;
     cursor: pointer;
-    width: 80px;
+}
+
+.open-form:hover {
+    background-color: rgb(240, 108, 0);
+}
+
+.open-form:active {
+    background-color: white;
+    color: rgb(170, 78, 3);
+    ;
 }
 
 .m-bottom {
@@ -204,7 +198,7 @@ table, th, td {
     text-align: center;
     padding-top: 10px;
     padding-bottom: 10px;
-    border: 1px solid white;
+    border: 1px solid rgb(175, 172, 172);
     width: auto;
     text-transform: capitalize;
 }
@@ -215,6 +209,54 @@ table {
     margin-bottom: 20px;
 }
 
+.success {
+    background-color: rgb(3, 3, 255);
+    color: rgb(221, 225, 226);
+}
+
+.success:hover {
+    background-color: rgb(2, 2, 168);
+    font-weight: bold;
+}
+
+.danger {
+    background-color: rgb(250, 5, 5);
+    color: rgb(221, 225, 226);
+}
+
+.danger:hover {
+    background-color: rgb(161, 3, 3);
+    font-weight: bold;
+}
+
+.green {
+    background-color: rgb(0, 160, 0);
+    color: rgb(221, 225, 226);
+}
+
+.green:hover {
+    background-color: rgb(2, 107, 2);
+    font-weight: bold;
+}
+
+.green:active {
+    background-color: white;
+    color: rgb(2, 107, 2);
+    ;
+}
+
+.danger:active {
+    background-color: white;
+    color: rgb(161, 3, 3);
+    ;
+}
+
+.success:active {
+    background-color: white;
+    color: rgb(2, 2, 168);
+    ;
+}
+
 h3 {
     margin: 10px 0;
 }
@@ -222,31 +264,43 @@ h3 {
 #current-time {
     text-transform: lowercase;
 }
-footer nav{
+
+footer nav {
     background-color: #00000050;
-    color: #ffffff;
+    color: gray;
     padding-top: 10px;
     padding-bottom: 10px;
     text-align: center;
-  }
-  footer p{
-      margin: 5px auto;
-  }
-  i{
-    width: 20px;
-    color: white;
-   
-  }
-  a{
+}
+
+footer p {
+    margin: 5px auto;
+}
+
+.icondiv a, i {
+    color: rgb(250, 208, 174);
+    font-size: 1.3em;
+}
+
+a {
     margin: auto 10px;
-  }
-hr{
+    text-decoration: none;
+}
+
+hr {
     margin: 0;
     padding: 0;
 }
-.nopadding{
+
+.nopadding {
     padding-left: 0;
 }
+
+.parag {
+    margin-left: 7px;
+    margin-right: 7px;
+}
+
 @media screen and (min-width: 700px) {
     table, .form, .clock-container {
         max-width: 500px;

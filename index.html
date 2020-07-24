@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>TimeMate | Digital Clock</title>
 </head>
+
 <body class="container">
     <main>
         <section class="flex col ali-center j-center w-100">
@@ -34,14 +35,16 @@
             <div class="formdiv">
                 <div id="doYou">
                     <div class="container flex row j-center t-center m-bottom">
-                        <p>It's<span id="current-time">_ _</span><span id="meal" class="meal nopadding">coding</span>time</p>
+                        <p>It's<span id="current-time">_ _</span><span id="meal"
+                                class="meal nopadding">coding</span>time</p>
                     </div>
                     <div id="photo-container" class="photo-container m-bottom">
+                        <img id="image" src="./images/images.jpg" alt="current task" class="image">
                         <p id="gretings" class="greeting">Enjoy your <span id="food" class="nopadding">coding</span></p>
                     </div>
                     <div class="container t-center m-bottom">
-                        <p>Do you want to update your meal preferences?</p>
-                        <button id="open-form">Update Preferences!</button>
+                        <p class="parag">Do you want to update your meal preferences?</p>
+                        <button id="open-form" class="open-form btn">Update Preferences!</button>
                     </div>
                 </div>
 
@@ -58,9 +61,9 @@
                         <option value="dinner">Dinner</option>
                     </select>
                     <div class="container flex row ali-center j-between">
-                        <button id="add-item" class="btn">Add</button>
-                        <span id="clear-all" class="btn">Clear all</span>
-                        <span id="done" class="btn">Done</span>
+                        <button id="add-item" class="btn green">Add</button>
+                        <button id="clear-all" class="btn danger">Clear all</button>
+                        <button id="done" class="btn success">Done</button>
                     </div>
                 </div>
             </div>
@@ -81,8 +84,8 @@
         <hr>
         <nav>
             <small>
-                <p class="t-center">Copyright &copy; 2020. All Rights Reserved.</p>
-                <p>Built by: Obiora Igboanusi. Inspired by @Dev_Tolu of GADS2020</p>
+                <p class="t-center">Copyright &copy; 2020. All Rights Reserved. Built by: Obiora Igboanusi.</p>
+                <p>Inspired by @Dev_Tolu | Images from <a href="https://unsplash.com">Unsplash</a></p>
             </small>
             <div class="flex row j-center ali-center icondiv">
                 <a href="https://www.facebook.com/chikeobi.igboanusil"><i class="fa fa-facebook icon"></i></a>

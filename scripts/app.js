@@ -15,11 +15,31 @@ const foodType = document.getElementById('meal-type');
 const button = document.querySelector('#add-item');
 const tableBody = document.querySelector('tbody');
 
+const breakfast_photo = "/images/pic01.jpg";
+const lunch_photo = "./images/pic02.jpg";
+const dinner_photo = "./images/pic03.jpg";
+const coding_photo = "/images/images.jpg";
+
+const clearBtn = document.getElementById('clear-all');
+const doneBtn = document.getElementById('done');
+const form = document.querySelector('#form');
+const openBtn = document.getElementById('open-form');
+const image = document.getElementById('image');
+
+const mealDisplay = document.querySelector('#meal');
+const foodDisplay = document.querySelector('#food');
+const photoDisplay = document.querySelector('#photo-container');
+
 window.addEventListener('load', () => {
   if (dataItem) {
-    loadDetails();
+    if (data.breakfast.food_Name || data.lunch.food_Name || data.dinner.food_Name) {
+      loadDetails();
+    } else {
+      displayTheme('coding', 'coding', coding_photo);
+    };
   } else {
-    localStorage.setItem('details', JSON.stringify(details))
+    localStorage.setItem('details', JSON.stringify(details));
+    displayTheme('coding', 'coding', coding_photo);
   };
 });
 
@@ -49,26 +69,11 @@ button.addEventListener('click', function () {
   };
 })
 // functions declaration
-function loadDetails() {
-  if (data.breakfast.food_Name != "") {
-    addRow('breakfast', data.breakfast.food_Name, data.breakfast.food_Time);
-  };
-  if (data.lunch.food_Name != "") {
-    addRow('lunch', data.lunch.food_Name, data.lunch.food_Time);
-  };
-  if (data.dinner.food_Name != "") {
-    addRow('dinner', data.dinner.food_Name, data.dinner.food_Time);
-  }
-};
-
-const clearBtn = document.getElementById('clear-all');
-const doneBtn = document.getElementById('done');
-const form = document.querySelector('#form');
-const openBtn = document.getElementById('open-form');
 
 clearBtn.addEventListener('click', () => {
   localStorage.clear();
   tableBody.innerHTML = '';
+  displayTheme('coding', 'coding', coding_photo);
 });
 
 doneBtn.addEventListener('click', () => {
@@ -76,6 +81,7 @@ doneBtn.addEventListener('click', () => {
   openBtn.style.display = 'block';
   document.getElementById('doYou').style.display = 'block';
   document.getElementById('done').style.display = 'none';
+  location.reload();
 })
 openBtn.onclick = () => {
   form.style.display = 'flex';
@@ -83,17 +89,7 @@ openBtn.onclick = () => {
   openBtn.style.display = 'none';
   document.getElementById('doYou').style.display = 'none';
 };
-
-function addRow(fType, fName, fTime) {
-  const row = `<tr><td class="foodtype"> ${fType} </td><td>${fName}</td><td>${fTime}</td></tr>`;
-
-  tableBody.insertAdjacentHTML('beforeend', row);
-};
-function updateContent() {
-  tableBody.innerHTML = '';
-  loadDetails();
-}
-
+clock();
 function clock() {
   let date = new Date();
   let hours = date.getHours();
@@ -117,28 +113,15 @@ function clock() {
 
   // current time
   document.querySelector('#current-time').innerText = hours + ':' + minutes + meridian + ',';
-  // display Current food or Tast
 
-  const mealDisplay = document.querySelector('#meal');
-  const foodDisplay = document.querySelector('#food');
-  const photoDisplay = document.querySelector('#photo-container');
-
-  if (hours === hourCalc(data.breakfast.food_Time)) {
-    mealDisplay.innerText = "Breakfast";
-    foodDisplay.innerText = data.breakfast.food_Name;
-    photoDisplay.style.backgroundImage = "url('./images/pic01.jpg')";
-  } else if (hours === hourCalc(data.lunch.food_Time)) {
-    mealDisplay.innerText = "Lunch";
-    foodDisplay.innerText = data.lunch.food_Name;
-    photoDisplay.style.backgroundImage = "url('./images/pic02.jpg')";
-  } else if (hours === hourCalc(data.dinner.food_Time)) {
-    mealDisplay.innerText = "Dinner";
-    foodDisplay.innerText = data.dinner.food_Name;
-    photoDisplay.style.backgroundImage = "url('./images/pic03.jpg')";
+  if ((hours == hourCalc(data.breakfast.food_Time)) && (data.breakfast.food_Name)) {
+    displayTheme('breakfast', data.breakfast.food_Name, breakfast_photo);
+  } else if ((hours == hourCalc(data.lunch.food_Time) && (data.lunch.food_Name))) {
+    displayTheme('lunch', data.lunch.food_Name, lunch_photo);
+  } else if ((hours == hourCalc(data.dinner.food_Time) && (data.dinner.food_Name))) {
+    displayTheme('dinner', data.dinner.food_Name, dinner_photo);
   } else {
-    mealDisplay.innerText = "Coding";
-    foodDisplay.innerText = "coding";
-    photoDisplay.style.backgroundImage = "url('./images/pic02.jpg')";
+    displayTheme('coding', 'coding', coding_photo);
   };
 
   function hourCalc(el) {
@@ -146,10 +129,37 @@ function clock() {
     el = (el == 0) ? (el = 12) : el;
     el = (el > 12) ? (el - 12) : el;
     el = (el < 10) ? ("0" + el) : el;
-    return  el.toString();
+    return el.toString();
   }
- 
+
   //update time
   let update = setTimeout(clock, 500);
 }
-clock();
+
+
+function addRow(fType, fName, fTime) {
+  const row = `<tr><td class="foodtype"> ${fType} </td><td>${fName}</td><td>${fTime}</td></tr>`;
+
+  tableBody.insertAdjacentHTML('beforeend', row);
+};
+function updateContent() {
+  tableBody.innerHTML = '';
+  loadDetails();
+}
+
+function displayTheme(type, name, photo) {
+  mealDisplay.innerText = `${type}`;
+  foodDisplay.innerText = `${name}`;
+  image.attributes.src.value = `${photo}`;
+};
+function loadDetails() {
+  if (data.breakfast.food_Name != "") {
+    addRow('breakfast', data.breakfast.food_Name, data.breakfast.food_Time);
+  };
+  if (data.lunch.food_Name != "") {
+    addRow('lunch', data.lunch.food_Name, data.lunch.food_Time);
+  };
+  if (data.dinner.food_Name != "") {
+    addRow('dinner', data.dinner.food_Name, data.dinner.food_Time);
+  }
+};
