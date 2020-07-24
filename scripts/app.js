@@ -15,10 +15,10 @@ const foodType = document.getElementById('meal-type');
 const button = document.querySelector('#add-item');
 const tableBody = document.querySelector('tbody');
 
-const breakfast_photo = "/images/pic01.jpg";
+const breakfast_photo = "./images/pic01.jpg";
 const lunch_photo = "./images/pic02.jpg";
 const dinner_photo = "./images/pic03.jpg";
-const coding_photo = "/images/images.jpg";
+const coding_photo = "./images/images.jpg";
 
 const clearBtn = document.getElementById('clear-all');
 const doneBtn = document.getElementById('done');
