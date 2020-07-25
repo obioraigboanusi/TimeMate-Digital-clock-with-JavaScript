@@ -114,11 +114,11 @@ function clock() {
   // current time
   document.querySelector('#current-time').innerText = hours + ':' + minutes + meridian + ',';
 
-  if ((hours == hourCalc(data.breakfast.food_Time)) && (data.breakfast.food_Name)) {
+  if ((hours == hourCalc(data.breakfast.food_Time)) && (data.breakfast.food_Name) && (meridian=="AM")) {
     displayTheme('breakfast', data.breakfast.food_Name, breakfast_photo);
-  } else if ((hours == hourCalc(data.lunch.food_Time) && (data.lunch.food_Name))) {
+  } else if ((hours == hourCalc(data.lunch.food_Time)) && (data.lunch.food_Name)) {
     displayTheme('lunch', data.lunch.food_Name, lunch_photo);
-  } else if ((hours == hourCalc(data.dinner.food_Time) && (data.dinner.food_Name))) {
+  } else if ((hours == hourCalc(data.dinner.food_Time)) && (data.dinner.food_Name) && (meridian=="PM")) {
     displayTheme('dinner', data.dinner.food_Name, dinner_photo);
   } else {
     displayTheme('coding', 'coding', coding_photo);
